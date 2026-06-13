@@ -28,14 +28,13 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    /* Replaced solid blue background with your Carousel image asset */
     background-image: url("IndiaMed Carousel Post 1350 2-5.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Centered by default on desktop screens */
     z-index: 9999;
     opacity: 1;
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
@@ -51,11 +50,24 @@ body {
     transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Made the SVG logo graphic significantly larger (increased from 180px to 320px) */
+/* Logo size configuration */
 .logo-container img {
     width: 320px; 
     height: auto;
     filter: invert(49%) sepia(97%) saturate(1455%) hue-rotate(345deg) brightness(101%) contrast(101%);
+}
+
+/* --- Mobile Responsiveness Targeting for the Opening Screen --- */
+@media (max-width: 768px) {
+    #preloader {
+        /* Changes alignment from dead center to top-focused on mobile */
+        align-items: flex-start; 
+        padding-top: 25vh; /* Places the logo exactly 25% down from the top edge */
+    }
+    
+    .logo-container img {
+        width: 260px; /* Scales down the logo slightly so it looks proportional on narrow smartphone displays */
+    }
 }
 
 /* Pulse keyframes */
@@ -71,7 +83,7 @@ body {
 }
 
 #preloader.fade-out .logo-container {
-    transform: scale(1.2); /* Smooth dynamic zoom when page bursts open */
+    transform: scale(1.2); 
 }
 
 /* --- Presentation Slides Layout --- */
@@ -139,7 +151,6 @@ body {
     window.addEventListener("load", function() {
         const preloader = document.getElementById("preloader");
         
-        // Brief timeout loop to let the animation play out nicely before fading
         setTimeout(() => {
             preloader.classList.add("fade-out");
         }, 1800); 
