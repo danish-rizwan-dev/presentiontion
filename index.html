@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>India Med Service</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+/* --- Opening Preloader Effect Styles --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Replaced solid blue background with your Carousel image asset */
+    background-image: url("IndiaMed Carousel Post 1350 2-5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                visibility 0.8s;
+}
+
+/* Container for your logo to pulse during loading loop */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: logoPulse 2s infinite ease-in-out;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Made the SVG logo graphic significantly larger (increased from 180px to 320px) */
+.logo-container img {
+    width: 320px; 
+    height: auto;
+    filter: invert(49%) sepia(97%) saturate(1455%) hue-rotate(345deg) brightness(101%) contrast(101%);
+}
+
+/* Pulse keyframes */
+@keyframes logoPulse {
+    0%, 100% { transform: scale(0.96); opacity: 0.9; }
+    50% { transform: scale(1.04); opacity: 1; }
+}
+
+/* Trigger classes when preloader hides */
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#preloader.fade-out .logo-container {
+    transform: scale(1.2); /* Smooth dynamic zoom when page bursts open */
+}
+
+/* --- Presentation Slides Layout --- */
+.page {
+    width: 100%;
+    display: block;
+    position: relative;
+    background-image: url("IndiaMed Carousel Post 1350 2-5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page img {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 2; 
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="preloader">
+    <div class="logo-container">
+        <img src="indiaMedServiceLogo.svg" alt="India Med Service Logo">
+    </div>
+</div>
+
+<div class="page">
+    <img src="Presentation_page-0001.jpg" alt="">
+</div>
+
+<div class="page">
+    <img src="Presentation_page-0002.jpg" alt="">
+</div>
+
+<div class="page">
+    <img src="Presentation_page-0003.jpg" alt="">
+</div>
+
+<div class="page">
+    <img src="Presentation_page-0004.jpg" alt="">
+</div>
+
+<div class="page">
+    <img src="Presentation_page-0005.jpg" alt="">
+</div>
+
+<div class="page">
+    <img src="Presentation_page-0006.jpg" alt="">
+</div>
+
+<div class="page">
+    <img src="Presentation_page-0007.jpg" alt="">
+</div>
+
+<div class="page">
+    <img src="Presentation_page-0008.jpg" alt="">
+</div>
+
+<script>
+    window.addEventListener("load", function() {
+        const preloader = document.getElementById("preloader");
+        
+        // Brief timeout loop to let the animation play out nicely before fading
+        setTimeout(() => {
+            preloader.classList.add("fade-out");
+        }, 1800); 
+    });
+</script>
+
+</body>
+</html>
